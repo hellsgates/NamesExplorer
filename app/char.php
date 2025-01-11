@@ -18,6 +18,11 @@ if (strlen($char) > 1) {
     $char = $char[0];
 }
 
+if (strlen($char) === 0) {
+    header('Location: index.php');
+    die();
+}
+
 $names = fetch_names($char);
 
 ?>

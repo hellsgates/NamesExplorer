@@ -21,7 +21,7 @@ $entries = fetch_name_entries($name);
     <thead>
     <tr>
         <th>Год</th>
-        <th>Количество детей</th>
+        <th>Количество рожденных детей</th>
     </tr>
     </thead>
     <tbody>

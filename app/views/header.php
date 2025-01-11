@@ -9,15 +9,17 @@ $alphabet = gen_alphabet();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./styles/simple.css" />
     <link rel="stylesheet" type="text/css" href="./styles/custom.css" />
-    <title>Name explorer</title>
+    <title>Name Explorer</title>
 </head>
 <body>
     <header>
-        <h1>Name Explorer</h1>
+        <h1>
+            <a href="index.php">Name Explorer</a> 
+        </h1>
         <p>Найди любое имя!</p>
         <nav>
             <?php foreach($alphabet AS $character):?>
-            <a href="index.php?<?php echo http_build_query(['char' => $character]);?>">
+            <a href="char.php?<?php echo http_build_query(['char' => $character]);?>">
             <?php echo e($character);?>
             </a>
             <?php endforeach;?>

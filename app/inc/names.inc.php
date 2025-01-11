@@ -23,3 +23,12 @@ function fetch_name_entries(string $name): array {
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+
+function gen_names_overview(): array {
+    global $pdo;
+    $stmt = $pdo->prepare("SELECT `name`, SUM(`count`) AS `sum` 
+                                FROM `names` GROUP BY `name` ORDER BY `sum` DESC LIMIT 10");
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+}
